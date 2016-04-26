@@ -1,0 +1,30 @@
+{
+  "name": "fetchBody",
+  "version": "1.0.0",
+  "description": "Lorem",
+  "main": "./crawlurl.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rudebaguette/crawlUrl.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rudebaguette/crawlUrl/issues"
+  },
+  "homepage": "https://github.com/rudebaguette/crawlUrl",
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "htmlparser": "^1.7.7",
+    "node-cache": "^3.2.1",
+    "request": "^2.69.0"
+  },
+  "scripts": {
+    "start": "./crawlurl.js"
+  },
+  "engines": {
+    "node": "4.2.1"
+  }
+}
