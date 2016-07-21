@@ -61,9 +61,9 @@ app.get('*', function(req, res) {
                     request(url, function(error, resp, body){
 
                         if(!error && resp.statusCode === 200){
-                            var $ = cheerio.load(body);
-                            var text = $('p').text();
-                            var response = {'text': text};
+                            //var $ = cheerio.load(body);
+                            //var text = $('p').text();
+                            var response = {'html': body};
                             res.statusCode = 200;
                             // Set cache
                             myCache.set(cache_key, response, 172800);
