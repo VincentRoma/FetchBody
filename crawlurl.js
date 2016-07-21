@@ -2,12 +2,33 @@
 'use strict';
 
 var express  = require('express');
+var mongoose = require('mongoose');
 var request = require('request');
 var cheerio  = require('cheerio');
 var NodeCache = require( "node-cache" );
 var url_paser = require('url');
 var cors = require('cors');
 var app      = express();
+
+mongoose.connect('mongodb://localhost/test');
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+    var bodySchema = mongoose.Schema({
+        name: String
+    });
+
+    var Body = mongoose.model('Body', bodySchema);
+
+    var test_body = new Body({name: 'TEST'});
+
+    test_body.save(function (err, test_body) {
+      if (err) return console.error(err);
+    });
+});
+
+
 
 var clean_url = function(url, base_url){
     // protocol less
